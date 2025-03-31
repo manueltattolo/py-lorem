@@ -1,7 +1,5 @@
 steps:
   - label: "Sentence"
-    agents:
-      queue: "linux"
     plugins:
       - docker#v5.12.0:
           image: python:3.13
