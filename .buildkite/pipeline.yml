@@ -18,7 +18,7 @@ steps:
           mount-buildkite-agent: true
           propagate-uid-gid: true
     command: |
-      pip install .
+      pip install --target /tmp/install .
       python -c "from loremipsum import paragraph; print(paragraph(max_char=100))" > result2.txt
       buildkite-agent annotate --style "success" --context "paragraph" "$(cat result2.txt)"
       buildkite-agent artifact upload "result2.txt"
