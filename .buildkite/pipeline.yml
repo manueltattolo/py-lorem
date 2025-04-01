@@ -5,7 +5,7 @@ steps:
       - docker#v5.12.0:
           image: python:3.13
           mount-buildkite-agent: true
-          user: root
+          # user: root
     command: |
       pip install .
       python -c "from loremipsum import sentence; print(sentence(max_char=20))" > result.txt
