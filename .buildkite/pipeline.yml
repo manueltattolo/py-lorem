@@ -16,7 +16,7 @@ steps:
       - docker#v5.12.0:
           image: python:3.13
           mount-buildkite-agent: true
-          user: root
+          # user: root
           propagate-uid-gid: true
     command: |
       pip install .
