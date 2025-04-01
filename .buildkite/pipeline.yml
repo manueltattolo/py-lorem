@@ -17,6 +17,7 @@ steps:
           image: python:3.13
           mount-buildkite-agent: true
           user: root
+          propagate-uid-gid: true
     command: |
       pip install .
       python -c "from loremipsum import paragraph; print(paragraph(max_char=100))" > result2.txt
