@@ -7,7 +7,7 @@ steps:
           mount-buildkite-agent: true
           propagate-uid-gid: true
     command: |
-      pip install .
+      pip install --user .
       python -c "from loremipsum import sentence; print(sentence(max_char=20))" > result.txt
       buildkite-agent annotate --style "success" --context "sentence" "$(cat result.txt)"
   - label: "Paragraph"
